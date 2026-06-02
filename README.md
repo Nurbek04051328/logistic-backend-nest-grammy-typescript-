@@ -82,15 +82,16 @@ src/
 ## 📦 Database (PostgreSQL + Prisma)
 
 Main entities:
+- User
+- Driver
+- Vehicle
+- Order
+- DriverLocation
 
-User
-Driver
-Vehicle
-Order
-DriverLocation
-Example User Model
 
-Example User Model
+
+Example User Model:
+```
 model User {
   id        String   @id @default(uuid())
   firstName String
@@ -105,69 +106,91 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
+```
 ---
 
 ## 📍 Driver Tracking System
 
 Drivers send real-time GPS coordinates:
-
+```
 POST /tracking/location
+```
 
 Data stored:
 
-latitude
-longitude
-speed
-timestamp
+- latitude
+- longitude
+- speed
+- timestamp
 
 Used for:
-
-Live map tracking
-Delivery monitoring
-Route history
+- Live map tracking
+- Delivery monitoring
+- Route history
 
 ---
 
 ## 🤖 Telegram Bot Integration
 
 Drivers can:
+- Register via bot
+- Receive system notifications
+- Access driver panel (PWA)
 
-Register via bot
-Receive system notifications
-Access driver panel (PWA link)
-⚡ Planned Features
-Socket.IO real-time tracking
-Live map (admin dashboard)
-Order assignment system
-Driver availability status
-Route history tracking
-Notifications system
-Admin analytics dashboard
-🛠 Installation
-npm install
+---
 
-npx prisma db push
+  ## ⚡ Planned Features
+  - Socket.IO real-time tracking
+  - Live map (admin dashboard)
+  - Order assignment system
+  - Driver availability status
+  - Route history tracking
+  - Notifications system
+  - Admin analytics dashboard
+  - Notifications system
 
-npx prisma generate
+--- 
 
-npm run start:dev
-🌍 Environment Variables
-PORT=5000
+  ## 🛠 Installation
+  ```
+  npm install
 
-DATABASE_URL="postgresql://postgres:password@localhost:5432/logistics"
+  npx prisma db push
 
-JWT_ACCESS_SECRET=your_access_secret
-JWT_REFRESH_SECRET=your_refresh_secret
-📡 API Base URL
-http://localhost:5000
-👨‍💻 Author
+  npx prisma generate
+
+  npm run start:dev
+
+  ```
+--- 
+
+  ## 🌍 Environment Variables
+  ```
+    PORT=5000
+
+    DATABASE_URL="postgresql://postgres:password@localhost:5432/logistics"
+
+    JWT_ACCESS_SECRET=your_access_secret
+    JWT_REFRESH_SECRET=your_refresh_secret
+  ```
+  --- 
+
+  ## 📡 API Base URL
+  ```
+    http://localhost:5000
+  ```
+  ---
+  ## 👨‍💻 Author
 
 Built by a fullstack developer using:
+  - NestJS
+  - Vue 3
+  - TypeScript
+  - PostgreSQL
 
-NestJS
-Vue 3
-TypeScript
-PostgreSQL
-📌 Notes
+
+---
+
+  ## 📌 Notes
 
 This project is under active development. Architecture is designed for scalability and real-world logistics systems (Uber-like tracking system).
