@@ -18,6 +18,7 @@ A scalable backend system for logistics management with real-time driver trackin
 ---
 
 ## 📁 Project Structure
+```
 src/
 ├── config/
 ├── common/
@@ -42,6 +43,7 @@ src/
 ├── app.module.ts
 └── main.ts
 
+```
 
 ---
 
@@ -69,14 +71,15 @@ src/
 - Refresh Token (stored in DB)
 - Passwords are hashed using bcrypt
 
+---
 ### Auth Endpoints
 
-```
+  - POST /auth/register
+  - POST /auth/login
 
-POST /auth/register
-POST /auth/login
 
-📦 Database (PostgreSQL + Prisma)
+---
+## 📦 Database (PostgreSQL + Prisma)
 
 Main entities:
 
@@ -87,6 +90,7 @@ Order
 DriverLocation
 Example User Model
 
+Example User Model
 model User {
   id        String   @id @default(uuid())
   firstName String
@@ -101,7 +105,9 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
-📍 Driver Tracking System
+---
+
+## 📍 Driver Tracking System
 
 Drivers send real-time GPS coordinates:
 
@@ -119,7 +125,10 @@ Used for:
 Live map tracking
 Delivery monitoring
 Route history
-🤖 Telegram Bot Integration
+
+---
+
+## 🤖 Telegram Bot Integration
 
 Drivers can:
 
